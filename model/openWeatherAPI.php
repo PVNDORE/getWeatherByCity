@@ -28,14 +28,8 @@ class OpenWeatherAPI
 
         $response = json_decode(curl_exec($curl));
 
-        $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
         curl_close($curl);
 
-        if ($status === 200) {
-            return $response;
-        } else {
-            return false;
-        }
+        return $response;
     }
 }
