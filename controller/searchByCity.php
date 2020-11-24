@@ -18,7 +18,7 @@ if(isset($_GET['city'])) {
         $data['feels_like'] = $r->main->feels_like;
         $data['humidity'] = $r->main->humidity;
 
-        echo "<th>".$date."</th></th><th>".$data['description']."</th><th>".$data['temp']."</th><th>".$data['feels_like']."</th><th>".$data['humidity']."</tr>";
+        echo "<th>".$city."</th><th>".$date."</th></th><th>".$data['description']."</th><th>".$data['temp']."</th><th>".$data['feels_like']."</th><th>".$data['humidity']."</tr>";
     } else {
         echo "I'm sorry an error occurred :(";
     }
