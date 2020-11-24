@@ -11,7 +11,7 @@ function makeRequest(url) {
     let httpRequest = new XMLHttpRequest();
 
     if (!httpRequest) {
-        alert('Impossible de créer une instance de XMLHTTP');
+        alert('Impossible to create an XMLHTTP instance');
         return false;
     }
 
@@ -31,7 +31,7 @@ function makeRequest(url) {
                 newRow.insertAdjacentHTML("beforeend", response);
 
             } else {
-                alert('I\'m sorry there is a request issue :(');
+                alert('I\'m sorry there is an AJAX request issue :(');
             }
         }
     }

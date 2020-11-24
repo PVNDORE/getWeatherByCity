@@ -20,9 +20,9 @@ if(isset($_GET['city'])) {
 
         echo "<th>".$date."</th></th><th>".$data['description']."</th><th>".$data['temp']."</th><th>".$data['feels_like']."</th><th>".$data['humidity']."</tr>";
     } else {
-        return false;
+        echo "I'm sorry an error occurred :(";
     }
 
 } else {
-    return false;
+    echo "Error : Parameter 'city' must be set.";
 }
