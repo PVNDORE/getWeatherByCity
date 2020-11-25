@@ -9,16 +9,21 @@ if(isset($_GET['city'])) {
 
     $r = $myOpenWeatherAPI->getWeatherByCity();
 
-    if ($r->cod === 200) {
+    if ($r->cod == 200) {
 
         $date = date("d/m/Y");
 
-        $data['description'] = $r->weather[0]->description;
-        $data['temp'] = $r->main->temp;
-        $data['feels_like'] = $r->main->feels_like;
-        $data['humidity'] = $r->main->humidity;
+        for ($i = 0; $i <= 16; $i=$i+8) {
+            $data['description'] = $r->list[$i]->weather[0]->description;
+            $data['temp'] = $r->list[$i]->main->temp;
+            $data['feels_like'] = $r->list[$i]->main->feels_like;
+            $data['humidity'] = $r->list[$i]->main->humidity;
 
-        echo "<th class='text-center'>".$city."</th><th class='text-center'>".$date."</th><th class='text-center'>".$data['description']."</th><th class='text-center'>".$data['temp']." °C</th><th class='text-center'>".$data['feels_like']." °C</th><th class='text-center'>".$data['humidity']." %</tr>";
+            $date = $r->list[$i]->dt_txt;
+
+            echo "<tr><th class='text-center'>".$city."</th><th class='text-center'>".$date."</th><th class='text-center'>".$data['description']."</th><th class='text-center'>".$data['temp']." °C</th><th class='text-center'>".$data['feels_like']." °C</th><th class='text-center'>".$data['humidity']." %</th></tr>";
+        }
+
     } else {
         echo "I'm sorry an error occurred :(";
     }

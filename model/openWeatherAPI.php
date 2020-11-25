@@ -14,7 +14,7 @@ class OpenWeatherAPI
 
     public function getWeatherByCity() {
 
-        $APIurl = $this->url.'weather?appid='.$this->token.'&q='.$this->city.'&units=metric';
+        $APIurl = $this->url.'forecast?appid='.$this->token.'&q='.$this->city.'&units=metric&cnt=17';
 
         $curl = curl_init($APIurl);
 
