@@ -26,9 +26,9 @@ function makeRequest(url) {
 
                 document.getElementById("result_table").removeAttribute('hidden');
 
-                let newRow = document.getElementById("result_table_body").insertRow();
+                let newRow = document.getElementById("result_table_body").insertRow(0);
 
-                newRow.insertAdjacentHTML("beforeend", response);
+                newRow.insertAdjacentHTML("afterbegin", response);
 
             } else {
                 alert('I\'m sorry there is an AJAX request issue :(');
