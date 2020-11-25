@@ -25,7 +25,7 @@ if(isset($_GET['city'])) {
         }
 
     } else {
-        echo "I'm sorry an error occurred :(";
+        echo "I'm sorry, there is an error with the API :(";
     }
 
 } else {
